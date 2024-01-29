@@ -1,17 +1,17 @@
 <template>
-  <TheHeader title="RememberMe" />
-  <TheResources/>
+  <TheHeader title="Resource List" />
+  <TheResources />
 </template>
 
 <script>
-import TheHeader from './components/layouts/TheHeader.vue';
+import TheHeader from './components/layout/TheHeader.vue';
 import TheResources from './components/learning-resources/TheResources.vue';
 
 export default {
   components: {
     TheHeader,
-    TheResources
-  }
+    TheResources,
+  },
 };
 </script>
 
@@ -20,13 +20,10 @@ export default {
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
   font-family: 'Roboto', sans-serif;
-}
-
-body {
-  margin: 0;
 }
 </style>
