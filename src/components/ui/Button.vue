@@ -1,12 +1,19 @@
 <template>
-  <button :class="mode">
-    <slot></slot>
+  <button :type="type" :class="variant">
+    <slot />
   </button>
 </template>
 
 <script>
 export default {
-  props: ['mode'],
+  props: {
+    type: {
+      type: String,
+      validator: (value) => ['button', 'submit', 'reset'].includes(value),
+      default: 'button',
+    },
+    variant: String,
+  },
 };
 </script>
 
@@ -16,8 +23,11 @@ button {
   font-family: inherit;
   background-color: #3a0061;
   border: 1px solid #3a0061;
+  border-radius: 4px;
   color: white;
   cursor: pointer;
+
+  transition: background-color 0.3s ease;
 }
 
 button:hover,

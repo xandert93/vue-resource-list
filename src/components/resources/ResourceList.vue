@@ -9,14 +9,23 @@
 </template>
 
 <script>
-import Resource from './Resource.vue';
+import Resource from '../resources/Resource.vue';
 
 export default {
   components: {
     Resource,
   },
-  data: () => ({
-    resources: [{ id: '001' }, { id: '002' }],
-  }),
+  props: {
+    resources: {
+      type: Array,
+    },
+  },
 };
 </script>
+
+<style scoped>
+div {
+  margin: auto;
+  max-width: 40rem;
+}
+</style>
