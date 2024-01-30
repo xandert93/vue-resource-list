@@ -15,7 +15,7 @@ export default {
   components: {
     Resource,
   },
-  props: {
+  inject: {
     resources: {
       type: Array,
     },

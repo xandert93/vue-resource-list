@@ -3,7 +3,7 @@
     <Card>
       <header>
         <h3>{{ title }}</h3>
-        <Button variant="flat" @click="deleteResource(id)">🗑️</Button>
+        <Button variant="flat" @click="handleDeleteButtonClick">🗑️</Button>
       </header>
       <p>{{ description }}</p>
       <nav>
@@ -21,15 +21,16 @@ export default {
     description: { type: String, required: true },
     href: { type: String, required: true },
   },
+  inject: ['removeResource'],
+  methods: {
+    handleDeleteButtonClick() {
+      this.removeResource(this.id);
+    },
+  },
 };
 </script>
 
 <style scoped>
-li {
-  margin: auto;
-  max-width: 40rem;
-}
-
 header {
   display: flex;
   justify-content: space-between;

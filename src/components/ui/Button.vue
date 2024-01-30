@@ -1,5 +1,5 @@
 <template>
-  <button :type="type" :class="variant">
+  <button :class="variant">
     <slot />
   </button>
 </template>
@@ -7,11 +7,6 @@
 <script>
 export default {
   props: {
-    type: {
-      type: String,
-      validator: (value) => ['button', 'submit', 'reset'].includes(value),
-      default: 'button',
-    },
     variant: String,
   },
 };
